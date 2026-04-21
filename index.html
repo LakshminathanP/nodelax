@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PrimeCare</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+body {
+  margin:0;
+  font-family:'Lato',sans-serif;
+  background:#EDF0F5;
+  color:#2C3645;
+}
+
+/* NAVBAR */
+.navbar {
+  position:sticky;
+  top:0;
+  background:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  border-bottom:1px solid #D8DFE8;
+  z-index:1000;
+}
+
+.logo {
+  font-weight:bold;
+}
+
+.nav-links {
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a {
+  text-decoration:none;
+  color:#2C3645;
+  font-size:12px;
+  font-weight:700;
+}
+
+.menu-toggle {
+  display:none;
+  font-size:20px;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero {
+  background:#0D2244;
+  color:white;
+  text-align:center;
+  padding:80px 20px;
+  animation:fadeUp 0.7s ease;
+}
+
+.eyebrow {
+  color:#C49A3C;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.hero h1 {
+  font-family:'Merriweather';
+  font-weight:300;
+  font-size:clamp(24px,4vw,46px);
+}
+
+.tagline {
+  font-family:'Merriweather';
+  font-style:italic;
+}
+
+/* BADGES */
+.badges {
+  margin-top:20px;
+}
+
+.badge {
+  display:inline-block;
+  background:#1B3A6B;
+  color:white;
+  padding:6px 10px;
+  margin:5px;
+  font-size:11px;
+}
+
+/* INTRO */
+.intro {
+  text-align:center;
+  padding:40px 20px;
+}
+
+/* CARDS */
+.cards {
+  display:flex;
+  gap:20px;
+  padding:40px;
+  justify-content:center;
+}
+
+.card {
+  background:white;
+  width:300px;
+  padding:20px;
+  border:1px solid #D8DFE8;
+  transition:0.3s;
+  animation:fadeUp 0.7s ease;
+}
+
+.card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.navy {border-top:5px solid #1B3A6B;}
+.teal {border-top:5px solid #1A7A7E;}
+.gold {border-top:5px solid #C49A3C;}
+
+.btn {
+  display:inline-block;
+  margin-top:10px;
+  padding:10px;
+  color:white;
+  text-decoration:none;
+}
+
+/* STATS */
+.stats {
+  background:#0D2244;
+  color:white;
+  display:flex;
+  justify-content:space-around;
+  padding:30px;
+  text-align:center;
+}
+
+/* FOOTER */
+footer {
+  background:#0F1E38;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+
+  .cards {
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .nav-links {
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:60px;
+    right:0;
+    background:white;
+    width:200px;
+    padding:20px;
+  }
+
+  .nav-links.active {
+    display:flex;
+  }
+
+  .menu-toggle {
+    display:block;
+  }
+
+  .stats {
+    flex-direction:column;
+    gap:15px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">PrimeCare</div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-links" id="menu">
+    <a href="compounding.html">Compounding</a>
+    <a href="development.html">Development</a>
+    <a href="infusion.html">Infusion</a>
+    <a href="about.html">About</a>
+    <a href="news.html">News</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+
+<div class="eyebrow">
+GALLATIN, TENNESSEE · EST. 2012 · 14+ YEARS OF PHARMACEUTICAL OPERATIONS
+</div>
+
+<h1>
+Specialty Pharmaceutical & Compounding, 
+<span style="color:#1A7A7E"><i>Product Development</i></span> & Infusion Services
+</h1>
+
+<p>
+PrimeCare is a US-based specialty pharmaceutical compounding and development company.
+</p>
+
+<p class="tagline">From Formulation to Market.</p>
+
+<div class="badges">
+<span class="badge">USP 795 Compliant</span>
+<span class="badge">14+ Years Operations</span>
+<span class="badge">ACHC Accreditation</span>
+<span class="badge">505(b)(2)</span>
+<span class="badge">TN & FL</span>
+</div>
+
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+<h2>Three Areas of Expertise. One Trusted Team.</h2>
+<p>Select the service area most relevant to you.</p>
+</div>
+
+<!-- CARDS -->
+<div class="cards">
+
+<a href="compounding.html">
+<div class="card navy">
+<h3>Compounding</h3>
+<p>Custom pharmaceutical formulations.</p>
+<div class="btn" style="background:#1B3A6B">Enter</div>
+</div>
+</a>
+
+<a href="development.html">
+<div class="card teal">
+<h3>Development</h3>
+<p>End-to-end drug development.</p>
+<div class="btn" style="background:#1A7A7E">Enter</div>
+</div>
+</a>
+
+<a href="infusion.html">
+<div class="card gold">
+<h3>Infusion</h3>
+<p>Biologic and IV treatments.</p>
+<div class="btn" style="background:#C49A3C">Enter</div>
+</div>
+</a>
+
+</div>
+
+<!-- STATS -->
+<div class="stats">
+<div><b>14+</b><br>Years</div>
+<div><b>USP 795</b><br>Standard</div>
+<div><b>TN & FL</b><br>Locations</div>
+<div><b>505(b)(2)</b><br>Development</div>
+</div>
+
+<footer>
+© 2026 PrimeCare
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
